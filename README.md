@@ -2,6 +2,8 @@
 
 Spring Boot 3 Application - CRUD, API externa, Swagger, MariaDB - based on fakestoreapi
 
+## Get All Products: /products/
+
 ```bash
 curl -X 'GET' \
   'http://localhost:8080/products/' \
@@ -38,4 +40,48 @@ curl -X 'GET' \
     "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
   }
 ]
+```
+
+## Update products: /products/
+
+```bash
+curl -X 'PUT' \
+  'http://localhost:8080/products/?id=02f254a0-7474-4373-aa66-19fecc84ac1e' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "price": 108.3
+}'
+```
+
+```json
+{
+  "id": null,
+  "entity_id": "02f254a0-7474-4373-aa66-19fecc84ac1e",
+  "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+  "price": 108.3,
+  "category": "women's clothing",
+  "description": "women's clothing",
+  "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+}
+```
+
+## Get product by title: /products/{title}
+
+```bash
+curl -X 'GET' \
+  'http://localhost:8080/products/Lock%20and%20Love%20Women%27s%20Removable%20Hooded%20Faux%20Leather%20Moto%20Biker%20Jacket' \
+  -H 'accept: */*'
+```
+
+```json
+{
+  "id": null,
+  "entity_id": "02f254a0-7474-4373-aa66-19fecc84ac1e",
+  "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+  "price": 29.95,
+  "category": "women's clothing",
+  "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+  "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+}
 ```
