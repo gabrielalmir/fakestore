@@ -85,3 +85,56 @@ curl -X 'GET' \
   "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
 }
 ```
+
+
+## Create a product: /products/
+
+```bash
+curl -X 'POST' \
+  'http://localhost:8080/products/' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "title": "New Product",
+  "price": 9.99,
+  "category": "miscellaneous",
+  "description": "This is a new product.",
+  "image": "https://example.com/new-product.jpg"
+}'
+```
+
+```json
+{
+  "id": "generated-id",
+  "entity_id": null,
+  "title": "New Product",
+  "price": 9.99,
+  "category": "miscellaneous",
+  "description": "This is a new product.",
+  "image": "https://example.com/new-product.jpg"
+}
+```
+
+## Delete Product: /products/{id}
+
+```bash
+curl -X 'DELETE' \
+  'http://localhost:8080/products/{id}' \
+  -H 'accept: */*'
+```
+
+## Update product: /products/{id}
+
+```bash
+curl -X 'PUT' \
+  'http://localhost:8080/products/{id}' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "title": "Updated Product",
+  "price": 19.99,
+  "category": "miscellaneous",
+  "description": "This is an updated product.",
+  "image": "https://example.com/updated-product.jpg"
+}'
+```
