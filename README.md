@@ -1,8 +1,10 @@
 # FakeStore
 
+## Backend
+
 Spring Boot 3 Application - CRUD, API externa, Swagger, MariaDB - based on fakestoreapi
 
-## Get All Products: /products/
+### Get All Products: /products/
 
 ```bash
 curl -X 'GET' \
@@ -42,7 +44,7 @@ curl -X 'GET' \
 ]
 ```
 
-## Update products: /products/
+### Update products: /products/
 
 ```bash
 curl -X 'PUT' \
@@ -66,7 +68,7 @@ curl -X 'PUT' \
 }
 ```
 
-## Get product by title: /products/{title}
+### Get product by title: /products/{title}
 
 ```bash
 curl -X 'GET' \
@@ -87,7 +89,7 @@ curl -X 'GET' \
 ```
 
 
-## Create a product: /products/
+### Create a product: /products/
 
 ```bash
 curl -X 'POST' \
@@ -115,7 +117,7 @@ curl -X 'POST' \
 }
 ```
 
-## Delete Product: /products/{id}
+### Delete Product: /products/{id}
 
 ```bash
 curl -X 'DELETE' \
@@ -123,7 +125,7 @@ curl -X 'DELETE' \
   -H 'accept: */*'
 ```
 
-## Update product: /products/{id}
+### Update product: /products/{id}
 
 ```bash
 curl -X 'PUT' \
