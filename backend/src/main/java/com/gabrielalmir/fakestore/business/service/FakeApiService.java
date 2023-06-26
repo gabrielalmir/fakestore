@@ -16,10 +16,17 @@ public class FakeApiService {
     private final ProductService productService;
 
     public List<ProductDto> getProductList() {
-        var productList = client.getProductList();
-        productList.forEach(productDto -> {
-            productService.saveProduct(productConverter.toEntity(productDto));
-        });
-        return productList;
+        try {
+            var productList = client.getProductList();
+            productList.forEach(productDto -> {
+                var productExists = productService.existsByTitle(productDto.getTitle());
+                if (!productExists) productService.saveProduct(productConverter.toEntity(productDto));
+            });
+            return productService.getAllProducts();
+        } catch (Exception e) {
+            throw new RuntimeException("Error while searching and saving the product: " + e);
+        }
     }
+
+
 }
