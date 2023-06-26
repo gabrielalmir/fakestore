@@ -2,6 +2,12 @@
 
 Spring Boot 3 Application - CRUD, API externa, Swagger, MariaDB - based on fakestoreapi
 
+```bash
+curl -X 'GET' \
+  'http://localhost:8080/products/' \
+  -H 'accept: */*'
+```
+
 ```json
 [
   {
