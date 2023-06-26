@@ -1,4 +1,4 @@
-# fakestore
+# FakeStore
 
 Spring Boot 3 Application - CRUD, API externa, Swagger, MariaDB - based on fakestoreapi
 
